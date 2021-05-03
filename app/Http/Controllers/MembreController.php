@@ -14,7 +14,8 @@ class MembreController extends Controller
      */
     public function index()
     {
-        //
+        $membres=Membre::all();
+        return view("admin.pages.membre", compact('membres'));
     }
 
     /**
@@ -24,7 +25,7 @@ class MembreController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pages.membre-create');
     }
 
     /**
@@ -35,7 +36,13 @@ class MembreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $membre=new Membre();
+        $membre->nom=$request->nom;
+        $membre->age=$request->age;
+        $membre->image=$request->image;
+        $membre->genre=$request->genre;
+        $membre->save();
+        return redirect()->route('membre.index');
     }
 
     /**
@@ -57,7 +64,7 @@ class MembreController extends Controller
      */
     public function edit(Membre $membre)
     {
-        //
+        return view('admin.pages.membre-edit', compact('membre'));
     }
 
     /**
@@ -69,7 +76,12 @@ class MembreController extends Controller
      */
     public function update(Request $request, Membre $membre)
     {
-        //
+        $membre->nom=$request->nom;
+        $membre->age=$request->age;
+        $membre->image=$request->image;
+        $membre->genre=$request->genre;
+        $membre->save();
+        return redirect()->route('membre.index');
     }
 
     /**
@@ -80,6 +92,7 @@ class MembreController extends Controller
      */
     public function destroy(Membre $membre)
     {
-        //
+        $membre->delete();
+        return redirect()->route('membre.index');
     }
 }
