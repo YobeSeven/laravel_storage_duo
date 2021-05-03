@@ -21,3 +21,4 @@ Route::get('/', function () {
 
 Route::resource('/admin/membre', MembreController::class);
 Route::resource('/admin/genre', GenreController::class);
+
