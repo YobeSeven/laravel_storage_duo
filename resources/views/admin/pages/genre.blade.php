@@ -6,8 +6,8 @@
         <p>{{$item->genre}}</p>
         <a href={{route('genre.edit', $item->id)}}>modifier</a>
         <form action="{{route('genre.destroy',$item->id)}}" method="POST">
-         @csrf
-         @method('DELETE')
+            @csrf
+            @method('DELETE')
          <button type="submit">supprimer</button>
         </form>
         <hr>
