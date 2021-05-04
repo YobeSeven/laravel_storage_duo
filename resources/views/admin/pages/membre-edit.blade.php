@@ -7,19 +7,19 @@
             @method('PUT')
             <div>
                 <label for="nom">modification nom</label>
-                <input type="text" name="nom" id="nom">
+                <input type="text" name="nom" id="nom" value="{{$membre->nom}}">
             </div>
             <div>
                 <label for="age">modification age</label>
-                <input type="text" name="age" id="age">
+                <input type="text" name="age" id="age" value="{{$membre->age}}">
             </div>
             <div>
                 <label for="image">modification image</label>
-                <input type="text" name="image" id="image">
+                <input type="text" name="image" id="image" value="{{$membre->image}}">
             </div>
             <div>
                 <label for="genre">modification genre</label>
-                <input type="text" name="genre" id="genre">
+                <input type="text" name="genre" id="genre" value="{{$membre->genre}}">
             </div>
             <button type="submit">modifier</button>
 

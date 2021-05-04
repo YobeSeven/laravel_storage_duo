@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Genre;
 use App\Models\Membre;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,8 @@ class MembreController extends Controller
      */
     public function create()
     {
-        return view('admin.pages.membre-create');
+        $genres=Genre::all();
+        return view('admin.pages.membre-create', compact('genres'));
     }
 
     /**

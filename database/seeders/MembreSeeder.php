@@ -19,7 +19,7 @@ class MembreSeeder extends Seeder
                 'nom'=>'Ayhan',
                 'age'=>23,
                 'image'=>'https://prnt.sc/12fc5o9',
-                'genre'=>'homme',
+                'genre'=>'1',
                 'created_at'=>now(),
             ],
         ]);
